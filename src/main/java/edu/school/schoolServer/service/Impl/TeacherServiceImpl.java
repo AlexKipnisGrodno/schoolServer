@@ -33,7 +33,7 @@ public class TeacherServiceImpl implements TeacherService {
     }
 
     @Override
-    public List<TeacherDto> findAllTeachers() {
-        return TeacherDtoMapper.EntitiesToDtos(teacherRepository.findAllTeachers());
+    public List<TeacherDto> findAll() {
+        return TeacherDtoMapper.EntitiesToDtos((List<Teacher>) teacherRepository.findAll());
     }
 }

@@ -14,7 +14,7 @@ public class TeacherController {
     private final TeacherServiceImpl teacherServiceImpl;
     @GetMapping
     public List<TeacherDto> getAllTeachers() {
-        return teacherServiceImpl.findAllTeachers();
+        return teacherServiceImpl.findAll();
     }
 
     @GetMapping("/{id}")

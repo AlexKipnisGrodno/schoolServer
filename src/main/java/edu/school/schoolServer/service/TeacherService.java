@@ -8,6 +8,6 @@ public interface TeacherService {
     TeacherDto save(TeacherDto teacherDto);
     TeacherDto findById(Long id);
     TeacherDto findByLastName(String lastName);
-    List<TeacherDto> findAllTeachers();
+    List<TeacherDto> findAll();
 
 }

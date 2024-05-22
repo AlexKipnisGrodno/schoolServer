@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface TeacherRepository  extends CrudRepository<Teacher, Long>{
     public Teacher findByLastName(String lastName);
-    public List<Teacher> findAllTeachers();
+    public List<Teacher> findAll();
     public Teacher save(Teacher teacher);
 }
