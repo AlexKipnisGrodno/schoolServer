@@ -29,10 +29,4 @@ public class TeacherController {
     public Teacher getTeacherByLastName(@PathVariable String lastName) {
         return teacherServiceImpl.findByLastName(lastName);
     }
-
-    @PostMapping("/new-school-user")
-    public String addSchoolUser(@RequestBody Teacher teacher) {
-        teacherServiceImpl.save(teacher);
-        return "SchoolUser is saved";
-    }
 }
