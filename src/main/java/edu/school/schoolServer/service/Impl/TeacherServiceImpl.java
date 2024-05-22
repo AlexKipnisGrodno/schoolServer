@@ -1,13 +1,9 @@
 package edu.school.schoolServer.service.Impl;
 
-import edu.school.schoolServer.dto.TeacherDto;
-import edu.school.schoolServer.dto.mapper.TeacherDtoMapper;
 import edu.school.schoolServer.entity.Teacher;
 import edu.school.schoolServer.repository.TeacherRepository;
 import edu.school.schoolServer.service.TeacherService;
 import lombok.RequiredArgsConstructor;
-import org.hibernate.annotations.DialectOverride;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -18,22 +14,17 @@ public class TeacherServiceImpl implements TeacherService {
     private final TeacherRepository teacherRepository;
 
     @Override
-    public TeacherDto save(TeacherDto teacherDto) {
-        return TeacherDtoMapper.EntityToDto(teacherRepository.save(TeacherDtoMapper.DtoToEntity(teacherDto)));
+    public Teacher findById(Long id){
+        return teacherRepository.findById(id).get();
     }
 
     @Override
-    public TeacherDto findById(Long id){
-        return TeacherDtoMapper.EntityToDto(teacherRepository.findById(id).get());
+    public Teacher findByLastName(String lastName) {
+        return teacherRepository.findByLastName(lastName);
     }
 
     @Override
-    public TeacherDto findByLastName(String lastName) {
-        return TeacherDtoMapper.EntityToDto(teacherRepository.findByLastName(lastName));
-    }
-
-    @Override
-    public List<TeacherDto> findAll() {
-        return TeacherDtoMapper.EntitiesToDtos((List<Teacher>) teacherRepository.findAll());
+    public List<Teacher> findAll() {
+        return (List<Teacher>) teacherRepository.findAll();
     }
 }

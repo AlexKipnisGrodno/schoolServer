@@ -7,7 +7,5 @@ import org.springframework.stereotype.Repository;
 import java.util.List;
 
 public interface TeacherRepository  extends CrudRepository<Teacher, Long>{
-    public Teacher findByLastName(String lastName);
-    public List<Teacher> findAll();
-    public Teacher save(Teacher teacher);
+     Teacher findByLastName(String lastName);
 }

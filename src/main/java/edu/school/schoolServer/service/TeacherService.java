@@ -1,13 +1,12 @@
 package edu.school.schoolServer.service;
 
-import edu.school.schoolServer.dto.TeacherDto;
+import edu.school.schoolServer.entity.Teacher;
 
 import java.util.List;
 
 public interface TeacherService {
-    TeacherDto save(TeacherDto teacherDto);
-    TeacherDto findById(Long id);
-    TeacherDto findByLastName(String lastName);
-    List<TeacherDto> findAll();
+    Teacher findById(Long id);
+    Teacher findByLastName(String lastName);
+    List<Teacher> findAll();
 
 }

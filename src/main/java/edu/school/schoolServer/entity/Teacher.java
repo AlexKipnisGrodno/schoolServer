@@ -25,13 +25,6 @@ public class Teacher{
 
     private String email;
 
-    private int age;
     @Column(name = "birth_date")
     private Date birthDate;
-
-    @OneToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private DaySchedule schedule;
-
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Subject subject;
 }

@@ -11,27 +11,23 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
-@Table
+@Table(name = "pupils")
 public class Pupil {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-
+    @Column(name = "firstname")
     private String firstName;
-
+    @Column(name = "lastname")
     private String lastName;
 
     private String password;
 
     private String email;
-
-    private int age;
-
+    @Column(name = "birth_date")
     private Date birthDate;
 
-    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private Group group;
+    private double gpa;
 
-    @ManyToOne
-    private DaySchedule schedule;
+    private String group;
 }
