@@ -8,5 +8,6 @@ public interface TeacherService {
     Teacher findById(Long id);
     Teacher findByLastName(String lastName);
     List<Teacher> findAll();
+    void save(Teacher teacher);
 
 }

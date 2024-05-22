@@ -11,20 +11,20 @@ import java.util.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Builder
+@Data
 @Table(name = "teachers")
 public class Teacher{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @Column(name = "firstname")
+    @Column(name = "firstname", unique = true, nullable = false)
     private String firstName;
-    @Column(name = "lastname")
+    @Column(name = "lastname", unique = true, nullable = false)
     private String lastName;
 
     private String password;
 
     private String email;
 
-    @Column(name = "birth_date")
-    private Date birthDate;
+    private String role;
 }
